@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+     int ans=INT_MIN;
+        for(auto x: accounts){
+            int sum=accumulate(x.begin(),x.end(),0);
+            ans=max(ans,sum);
+        }
+        return ans;
+    }
+};
