@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int xorOperation(int n, int start) {
+        vector<int> temp(n);
+        temp[0]=start;
+        int ans=start;
+        for(int i=1;i<n;i++){
+            temp[i]=start+2*i;
+            ans=ans^temp[i];
+        }
+        return ans;
+    }
+};
