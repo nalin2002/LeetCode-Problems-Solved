@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int sum(vector<int>& arr,int k){
+        int ans=0;
+        int temp=0;
+        int n=arr.size();
+        for(int i=0;i<k;i++){
+            temp+=arr[i];
+        }
+        ans=temp;
+        for(int i=k;i<n;i++){
+            temp=temp+arr[i]-arr[i-k];
+            ans+=temp;
+        }
+        return ans;
+    }
+    int sumOddLengthSubarrays(vector<int>& arr) {
+        int n=arr.size();
+        int ans=0;
+       
+        for(int i=1;i<=n;i+=2){
+            ans+=sum(arr,i);
+        }
+        return ans;
+    }
+};
