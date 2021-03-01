@@ -1,0 +1,26 @@
+long repeatedString(string s, long m) {
+int n=s.size();
+long long ans=0;
+if(m<=n){
+    for(long long i=0;i<m;i++){
+        if(s[i]=='a')
+        ans++;
+    }
+}
+else{
+   long long x= m%n;
+    long long y=m/n;
+    long long temp=0;
+    for(long long i=0;i<n;i++){
+        if(s[i]=='a')
+        temp++;
+    }
+    temp+= (y-1)*temp;
+    for(long long i=0;i<x;i++){
+        if(s[i]=='a')
+        temp++;
+    }
+    ans=temp;
+}
+return ans;
+}
